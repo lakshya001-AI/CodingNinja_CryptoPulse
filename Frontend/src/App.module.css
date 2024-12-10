@@ -186,6 +186,12 @@ html, body{
     margin-right: 10px;
 }
 
+.customToast{
+    color: white !important;
+    background: linear-gradient(to right, #4776E6 0%, #8E54E9 51%, #4776E6 100%) !important;
+    
+}
+
 
   
   
