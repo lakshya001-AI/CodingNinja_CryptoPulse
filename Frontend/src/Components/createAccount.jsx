@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { GoogleLogin} from '@react-oauth/google'; // Import GoogleLogin component
 import { ToastContainer, toast , Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
 
 function CreateAccount() {
 
@@ -17,36 +18,75 @@ function CreateAccount() {
     // You can send the response to your backend for further processing
   };
 
-  function createAccount(){
-    if(firstName && lastName && emailAddress && password){
- 
-      toast.success('All credentials are there', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-        transition: Bounce,
-        className: Style.customToast
-        });
-    }else{
-      toast.warn('All credentials are not there', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-        transition: Bounce,
-        className: Style.customToast
+  async function createAccount() {
+    if (firstName && lastName && emailAddress && password) {
+        try {
+            const response = await axios.post("http://localhost:5000/createAccount", {
+                firstName,
+                lastName,
+                emailAddress,
+                password
+            });
+
+            if (response.status === 201) {
+                toast.success('Account Created Successfully! Welcome to Cryptopulse!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: Bounce,
+                    className: Style.customToast
+                });
+            }
+        } catch (error) {
+            if (error.response?.status === 400) {
+                toast.warn('User already exists! Please sign in.', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: Bounce,
+                    className: Style.customToast
+                });
+            } else {
+                toast.error('Oops! We couldn’t create your account. An error occurred.', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: Bounce,
+                    className: Style.customToast
+                });
+            }
+        }
+    } else {
+        toast.error('All fields are required.', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Bounce,
+            className: Style.customToast
         });
     }
-  }
+}
+
 
 
   return (
