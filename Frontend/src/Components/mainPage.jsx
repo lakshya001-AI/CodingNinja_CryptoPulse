@@ -1,10 +1,17 @@
 import React from 'react'
-import {Link} from "react-router-dom"
+import {Link, useNavigate, useSearchParams} from "react-router-dom"
 
 function MainPage() {
+
+    const navigate = useNavigate();
+
+    function logoutUser(){
+        localStorage.removeItem("authToken");
+        navigate("/");
+    }
   return <>
   <h1>Hello this is Main Page</h1>
-  <Link to="/">logout</Link>
+  <button onClick={logoutUser}>logout</button>
   </>
 }
 
