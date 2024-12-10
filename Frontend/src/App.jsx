@@ -1,0 +1,19 @@
+import React from 'react'
+import Style from "./App.module.css"
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import Login from './Components/login'
+import { GoogleOAuthProvider } from '@react-oauth/google'; 
+import CreateAccount from './Components/createAccount';
+
+function App() {
+  return <>
+  <BrowserRouter>
+  <Routes>
+    <Route path='/' element={<GoogleOAuthProvider clientId='1060507592574-4rd8f30c3s68qe277a15ic82g736sgur.apps.googleusercontent.com'><Login/></GoogleOAuthProvider>}/>
+    <Route path='/createAccount' element={<GoogleOAuthProvider clientId='1060507592574-4rd8f30c3s68qe277a15ic82g736sgur.apps.googleusercontent.com'><CreateAccount/></GoogleOAuthProvider>}/>
+  </Routes>
+  </BrowserRouter>
+  </>
+}
+
+export default App

@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+/* login Page CSS */
+
+.mainDiv{
+    width: 100vw;
+    height: 100vh;
+}
+
+.loginDivMain{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.959);
+}
+
+.NavBarLoginDiv{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 20px;
+}
+
+.NavBarLoginDiv h1{
+    font-size: 29px;
+}
+
+.createAccountLink{
+    text-decoration: none;
+    background: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%);
+    margin: 10px;
+    padding: 12px 40px;
+    text-align: center;
+    text-transform: uppercase;
+    background-size: 200% auto;
+    color: white;            
+    border-radius: 30px;
+    display: block;
+}
+
+.createAccountLink:hover{
+    background-position: right center;
+}
+
+.loginDiv1{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginContentDiv {
+    width: 30vw;
+    height: 70vh;
+    background-color: rgba(255, 255, 255, 0); /* Fully transparent background */
+    backdrop-filter: blur(10px); /* Creates the frosted glass effect with blur */
+    border-radius: 30px; /* Optional: Adds rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow */
+    border: 1px solid rgba(255, 255, 255, 0.411); /* Optional: Adds a faint border to enhance the glass effect */
+    padding: 30px; /* Optional: Adds padding inside the div */
+    color: white;
+}  
+
+.loginContentDiv1 {
+    width: 30vw;
+    height: 80vh;
+    background-color: rgba(255, 255, 255, 0); /* Fully transparent background */
+    backdrop-filter: blur(10px); /* Creates the frosted glass effect with blur */
+    border-radius: 30px; /* Optional: Adds rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow */
+    border: 1px solid rgba(255, 255, 255, 0.411); /* Optional: Adds a faint border to enhance the glass effect */
+    padding: 30px; /* Optional: Adds padding inside the div */
+    color: white;
+}  
+
+
+.loginContentDivHeading{
+    font-size: 37px;
+}
+.loginContentDivPara{
+    margin-top: 5px;
+    font-size: 15px;
+    color: rgb(181, 181, 181);
+}
+
+.InputContentDiv{
+    margin-top: 40px;
+}
+
+.emailInput{
+    width: 100%;
+    height: 7vh;
+    padding: 10px;
+    font-size: 18px;
+    background-color: transparent;
+    border: solid 1px rgba(255, 255, 255, 0.411);
+    border-radius: 10px;
+    margin-top: 3px;
+    color: white;
+}
+
+.paraInput{
+    margin-left: 3px;
+    font-size: 18px;
+}
+
+.InputContentDiv1{
+    margin-top: 20px;
+}
+
+.loginBtnDiv{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.loginBtn {
+    width: 100%;
+    background: linear-gradient(to right, #4776E6 0%, #8E54E9 51%, #4776E6 100%);
+    margin: 10px;
+    padding: 12px 40px;
+    text-align: center;
+    text-transform: uppercase;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 30px;
+    display: block;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.loginBtn:hover {
+    background-position: right center; /* Slide the gradient */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+    transform: translateY(-3px); /* Lift the button slightly */
+}
+
+.orParaDiv{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.googleSignINDiv{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.googleSignINDiv1{
+    width: 90%;
+}
+
+.InputContentDivName{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.InputContentDivEmail{
+    margin-right: 10px;
+}
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
