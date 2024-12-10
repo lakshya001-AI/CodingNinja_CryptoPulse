@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Style from "../App.module.css";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import { GoogleLogin} from '@react-oauth/google'; // Import GoogleLogin component
 import { ToastContainer, toast , Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,6 +10,8 @@ function Login() {
 
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  
 
   const handleGoogleLogin = (response) => {
     console.log(response); // Handle Google login response here
@@ -37,6 +39,9 @@ function Login() {
                     transition: Bounce,
                     className: Style.customToast,
                 });
+                setTimeout(()=>{
+                  navigate("/mainPage");
+                },5000);
             }
         } catch (error) {
             if (error.response?.status === 401) {
