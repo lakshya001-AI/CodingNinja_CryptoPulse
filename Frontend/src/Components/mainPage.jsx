@@ -75,7 +75,7 @@ function MainPage() {
               <Link className={Style.linkElementNavBar} to="/currencies">
                 Currencies
               </Link>
-              <Link className={Style.linkElementNavBar} to="#">
+              <Link className={Style.linkElementNavBar} to="/favorite">
                 Favorite
               </Link>
             </div>
