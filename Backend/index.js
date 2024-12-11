@@ -150,9 +150,11 @@ app.post("/loginUser", async (req, res) => {
             expiresIn: "1h", // Token validity
         });
 
+
         res.status(200).send({
             message: "Logged in successfully!",
             token, // Send the token to the client
+            user
         });
     } catch (error) {
         console.error("Login Error:", error);

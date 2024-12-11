@@ -193,7 +193,307 @@ html, body{
 }
 
 
-  
+/* main Page CSS */
+
+.mainPageMainDiv{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.959);
+    overflow-y: auto;
+}
+
+.navBarMainPage{
+    width: 100%;
+    height: fit-content;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.logoNavBarMainPage h1{
+    font-size: 28px;
+}
+
+.linkNavBarMainPage{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.linkElementNavBar{
+    text-decoration: none;
+    margin: 10px;
+    color: rgb(181, 181, 181);
+    font-size: 18px;
+}
+
+.linkElementNavBar:hover{
+    color: white;
+}
+
+.ProfileBtnNavBarMainPage{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.profileBtn{
+    background: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%);
+    margin: 10px;
+    padding: 6px 40px;
+    text-align: center;
+    text-transform: uppercase;
+    background-size: 200% auto;
+    color: white;            
+    border-radius: 30px;
+    display: block;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.profileBtn:hover{
+    background-position: right center;
+}
+
+
+.userInfoDiv {
+    position: absolute;
+    top: 70px; /* Adjust based on the Profile button's position */
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0); /* Fully transparent background */
+    backdrop-filter: blur(10px); /* Creates the frosted glass effect with blur */
+    border-radius: 30px; /* Optional: Adds rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow */
+    border: 1px solid rgba(255, 255, 255, 0.411); /* Optional: Adds a faint border to enhance the glass effect */
+    padding: 20px 30px; /* Optional: Adds padding inside the div */
+    z-index: 1000;
+    color: white;
+}
+
+.logoutBtn {
+    background: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%);
+    padding: 3px 20px;
+    text-align: center;
+    background-size: 200% auto;
+    color: white;            
+    border-radius: 10px;
+    display: block;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.logoutBtn:hover {
+    background-position: right center;
+}
+
+.userInfoDivPara1{
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.userInfoDivPara2{
+    color: rgb(181, 181, 181);
+}
+
+
+/* section 1 Main Page */
+
+.section1MainPage{
+    width: 100%;
+    height: 90vh;
+    background-image: url("https://images.pexels.com/photos/2068664/pexels-photo-2068664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.overlaySection1MainPage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+.overlaySection1MainPageDiv1{
+    width: 40vw;
+    margin-left: 40px;
+    margin-top: 90px;
+    line-height: 90px;
+}
+
+.overlaySection1MainPageDiv1Para1{
+    font-size: 75px;
+    font-weight: 600;
+}
+
+.overlaySection1MainPageDiv2{
+    width: 40vw;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+
+.overlaySection1MainPageDiv2 p{
+    font-size: 19px;
+    color: rgb(181, 181, 181);
+}
+
+
+.overlaySection1MainPageDiv3{
+    margin-left: 40px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.exploreBtn{
+    width: 10vw;
+    background: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%);
+    padding: 15px;
+    text-align: center;
+    background-size: 200% auto;
+    color: white;            
+    border-radius: 2px;
+    display: block;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.exploreBtn:hover{
+    background-position: right center;
+}
+
+
+.learnMoreBtn{
+    width: 10vw;
+    margin-left: 20px;
+    padding: 15px;
+}
+
+
+/* section 2 Main Page */
+
+.section2MainPage{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.section2MainPageDiv1{
+    width: 50%;
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 30px;
+}
+
+.section2MainPageDiv2{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 30px;
+}
+
+.section2MainPageDiv1InnerDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.section2MainPageDiv1Para1{
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.section2MainPageDiv1Para2{
+    font-size: 23px;
+    margin-top: 20px;
+    color: rgb(181, 181, 181);
+}
+
+.cryptoCurrencyText {
+    background: linear-gradient(to right, #4776E6 0%, #8E54E9 51%, #4776E6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block; /* Ensure the span adapts to text size */
+}
+
+.section2MainPageDiv1InnerDiv1Para1 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.section2MainPageDiv1InnerDiv2{
+    margin-left: 20px;
+}
+
+.cryptoPriceDiv{
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px; /* Optional: add some space between the divs */
+}
+
+.priceDiv{
+    width: 350px;
+    height: 250px;
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    color: black;
+}
+
+.coinImg{
+    width: 80%;
+    height: 8vmax;
+}
+
+.currencyHeading{
+    margin-top: 7px;
+    font-size: 25px;
+}
+
+.exchangePriceDiv{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.exchangePriceDiv{
+    margin-top: 5px;
+}
+
+.priceExchangePara{
+    color: blue;
+    font-weight: 500;
+}
+
+.pricePara{
+    margin-left: 5px;
+    font-size: 18px;
+}
+
+ 
   
 
 

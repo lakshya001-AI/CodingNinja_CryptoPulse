@@ -98,11 +98,15 @@ const loginUser = async () => {
           });
 
           if (response.status === 200) {
-              const { token, message } = response.data;
+              const { token, message , user } = response.data;
 
               // Store the token in localStorage
               localStorage.setItem("authToken", token);
-
+              localStorage.setItem("userFirstName",user.firstName);
+              localStorage.setItem("userLastName",user.lastName);
+              localStorage.setItem("userEmailAddress",user.emailAddress);
+              
+              
               toast.success(`${message}`, {
                   position: "top-right",
                   autoClose: 5000,
