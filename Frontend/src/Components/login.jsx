@@ -18,78 +18,8 @@ function Login() {
     // You can send the response to your backend for further processing
   };
 
-//   const loginUser = async () => {
-
-//     if (emailAddress && password) {
-//         try {
-//             const response = await axios.post("http://localhost:5000/loginUser", {
-//                 emailAddress,
-//                 password,
-//             });
-
-//             if (response.status === 200) {
-//                 toast.success(`${response.data.message}`, {
-//                     position: "top-right",
-//                     autoClose: 5000,
-//                     hideProgressBar: false,
-//                     closeOnClick: true,
-//                     pauseOnHover: true,
-//                     draggable: true,
-//                     progress: undefined,
-//                     theme: "colored",
-//                     transition: Bounce,
-//                     className: Style.customToast,
-//                 });
-//                 setTimeout(()=>{
-//                   navigate("/mainPage");
-//                 },5000);
-//             }
-//         } catch (error) {
-//             if (error.response?.status === 401) {
-//                 toast.warn('User not found or invalid credentials! Please check your details.', {
-//                     position: "top-right",
-//                     autoClose: 5000,
-//                     hideProgressBar: false,
-//                     closeOnClick: true,
-//                     pauseOnHover: true,
-//                     draggable: true,
-//                     progress: undefined,
-//                     theme: "colored",
-//                     transition: Bounce,
-//                     className: Style.customToast,
-//                 });
-//             } else {
-//                 toast.error('Oops! We couldn’t log you in. Please try again later.', {
-//                     position: "top-right",
-//                     autoClose: 5000,
-//                     hideProgressBar: false,
-//                     closeOnClick: true,
-//                     pauseOnHover: true,
-//                     draggable: true,
-//                     progress: undefined,
-//                     theme: "colored",
-//                     transition: Bounce,
-//                     className: Style.customToast,
-//                 });
-//             }
-//         }
-//     } else {
-//         toast.error('All fields are required!', {
-//             position: "top-right",
-//             autoClose: 5000,
-//             hideProgressBar: false,
-//             closeOnClick: true,
-//             pauseOnHover: true,
-//             draggable: true,
-//             progress: undefined,
-//             theme: "colored",
-//             transition: Bounce,
-//             className: Style.customToast,
-//         });
-//     }
-// };
-
 const loginUser = async () => {
+  
   if (emailAddress && password) {
       try {
           const response = await axios.post("http://localhost:5000/loginUser", {

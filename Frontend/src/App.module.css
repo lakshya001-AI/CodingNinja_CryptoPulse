@@ -11,6 +11,24 @@ html, body{
     height: 100%;
 }
 
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 7px; /* Width of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); /* Track background */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, #4776E6 0%, #8E54E9 100%); /* Gradient color */
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to right, #4e89ff 0%, #a066f5 100%); /* Brighter gradient on hover */
+  }
+
 /* login Page CSS */
 
 .mainDiv{
@@ -379,6 +397,7 @@ html, body{
     width: 10vw;
     margin-left: 20px;
     padding: 15px;
+    cursor: pointer;
 }
 
 
@@ -391,6 +410,7 @@ html, body{
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-top: 3vmax;
 }
 
 .section2MainPageDiv1{
@@ -465,7 +485,7 @@ html, body{
 }
 
 .coinImg{
-    width: 80%;
+    width: 50%;
     height: 8vmax;
 }
 
@@ -494,7 +514,121 @@ html, body{
     font-size: 18px;
 }
 
- 
+/* ------ section 3 main page ----------  */
+
+.section3MainPage {
+    width: 100%;
+    height: 70vh; /* Adjust to content height */
+    padding: 50px 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vmax;
+  }
+  
+  .section3Content {
+    max-width: 1200px;
+    text-align: center;
+  }
+  
+  .section3Heading {
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .section3Description {
+    font-size: 1.2rem;
+    color: #d8d8d8;
+    margin-bottom: 40px;
+  }
+  
+  .featureGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .featureCard {
+    height: 40vh;
+    background: linear-gradient(to right, #4e89ff 0%, #8E54E9 100%);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: white;
+  }
+  
+  .featureCard:hover {
+    background: linear-gradient( 170deg, #4a6edb 10%, #7a5de8 90%, #4a6edb 20%);
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.7);
+  }
+  
+  .featureCard h3 {
+    font-size: 2.3rem;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .featureCard p {
+    font-size: 1rem;
+    color: #dbdbdb;
+    line-height: 1.5;
+    margin-top: 40px;
+  }
+
+  /* section 4 css */
+
+  .section4MainPage{
+    width: 100%;
+    height: 50vh;
+    background-color: white;
+    margin-top: 10vmax;
+    background-image: url("https://images.pexels.com/photos/6770775/pexels-photo-6770775.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  .overlaySection4MainPage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 20px 30px;
+  }
+
+  .overlaySection4MainPage h1{
+    font-size: 45px;
+    margin-left: 40px;
+    margin-top: 70px;
+  }
+
+  .overlaySection4MainPage p{
+    font-size: 18px;
+    margin-left: 40px;
+    margin-top: 10px;
+  }
+
+  /* footer section */
+
+  .footerSection{
+    width: 100%;
+    background-color: rgba(32, 32, 32, 0.7);
+    padding: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
   
 
 
