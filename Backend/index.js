@@ -1,75 +1,3 @@
-// const express = require("express");
-// const app = express();
-// const dotenv = require("dotenv");
-// const cors = require("cors");
-// const connectMongoDB = require("./Database/connectDB");
-// const userModel = require("./Database/userSchema");
-// const bcrypt = require("bcrypt");
-// dotenv.config();
-// connectMongoDB();
-
-// app.use(express.json());
-// app.use(cors());
-
-// app.get("/", (req, res)=>{
-//     res.send("Hello this Backend");
-// });
-
-// app.post("/createAccount", async (req, res) => {
-//     try {
-//         const { firstName, lastName, emailAddress, password } = req.body;
-//         const userExists = await userModel.findOne({ emailAddress });
-
-//         if (userExists) {
-//             return res.status(400).send({ message: "User already exists" });
-//         }
-
-//         const hashedPassword = await bcrypt.hash(password, 10);
-
-//         const newUser = await userModel.create({
-//             firstName,
-//             lastName,
-//             emailAddress,
-//             password: hashedPassword
-//         });
-
-//         console.log(newUser);
-//         res.status(201).send({ message: "Account created successfully" });
-//     } catch (error) {
-//         console.error("Error creating account:", error);
-//         return res.status(500).send({ message: "Internal server error" });
-//     }
-// });
-
-// app.post("/loginUser", async (req, res) => {
-//     try {
-//         const { emailAddress, password } = req.body;
-
-//         // Check if user exists
-//         const user = await userModel.findOne({ emailAddress });
-//         if (!user) {
-//             return res.status(401).send({ message: "User not found!" });
-//         }
-
-//         // Verify password
-//         const matchPassword = await bcrypt.compare(password, user.password);
-//         if (!matchPassword) {
-//             return res.status(401).send({ message: "Invalid credentials!" });
-//         }
-
-//         // Successful login
-//         res.status(200).send({ message: "Logged in successfully!" });
-//     } catch (error) {
-//         console.error("Login Error:", error);
-//         return res.status(500).send({ message: "An error occurred" });
-//     }
-// });
-
-// const PORT = process.env.PORT;
-// app.listen(PORT, ()=>{
-//     console.log(`Server is running on Port ${PORT}`);
-// });
-
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
@@ -209,6 +137,51 @@ app.post("/addToFavorite", async (req, res) => {
     res.status(500).send({ message: "An error occurred" });
   }
 });
+
+// Show the favorite crypto Prices of the User
+
+app.post("/getTheFavoriteCryptoCurrencies", async (req, res) => {
+  const { userEmailAddress } = req.body;
+
+  try {
+    // Fetch user favorites from the database
+    const user = await userModel.findOne({ emailAddress: userEmailAddress });
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.json({ favoriteCryptos: user.favoriteCryptos });
+  } catch (error) {
+    console.error("Error fetching favorite cryptocurrencies:", error);
+    res.status(500).json({ message: "Server Error" });
+  }
+});
+
+
+// Remove the coin from the favorites
+
+app.post("/removeFavoriteCrypto", async (req, res) => {
+  const { userEmailAddress, coinId } = req.body;
+
+  try {
+    // Find and update the user document
+    const user = await userModel.findOneAndUpdate(
+      { emailAddress: userEmailAddress },
+      { $pull: { favoriteCryptos: { coinId } } },
+      { new: true }
+    );
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.json({ message: "Favorite cryptocurrency removed successfully" });
+  } catch (error) {
+    console.error("Error removing favorite cryptocurrency:", error);
+    res.status(500).json({ message: "Server Error" });
+  }
+});
+
 
 // Example of a Protected Route
 app.get("/protectedRoute", verifyToken, (req, res) => {
