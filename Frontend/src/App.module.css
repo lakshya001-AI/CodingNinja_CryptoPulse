@@ -434,6 +434,7 @@ html, body{
     background: linear-gradient(to right, #4776E6 0%, #8E54E9 51%, #4776E6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: none;
     display: inline-block; /* Ensure the span adapts to text size */
 }
 
