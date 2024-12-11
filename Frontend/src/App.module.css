@@ -243,9 +243,9 @@ html, body{
 
 .linkElementNavBar{
     text-decoration: none;
-    margin: 10px;
+    margin: 20px;
     color: rgb(181, 181, 181);
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .linkElementNavBar:hover{

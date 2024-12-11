@@ -5,6 +5,8 @@ import LineChart from "./LineChart/lineChart";
 import { Link, useNavigate } from "react-router-dom";
 import Style from "../App.module.css";
 import PriceComponent from "./priceComponent";
+import { ToastContainer, toast , Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
 
 const Coin = () => {
@@ -47,8 +49,6 @@ const Coin = () => {
 
   const navigate = useNavigate();
   const [showUserInfo, setShowUserInfo] = useState(false);
-  const [displayCoin, setDisplayCoin] = useState([]);
-  const [input, setInput] = useState("");
 
   function logoutUser() {
     localStorage.removeItem("authToken");
@@ -82,6 +82,49 @@ const Coin = () => {
       }
     }
   };
+
+
+  async function addToFavorite(coinId, coinName) {
+
+
+    try {
+        let response = await axios.post("http://localhost:5000/addToFavorite", {
+            coinId,
+            coinName,
+            userEmailAddress,
+        });
+
+       
+        
+
+        toast.success(response.data.message, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Bounce,
+            className: Style.customToast,
+        });
+    } catch (error) {
+        toast.error(error.response.data.message || "An Error Occurred!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Bounce,
+            className: Style.customToast,
+        });
+    }
+}
+
 
   if (coinData && historicalData) {
     return (
@@ -143,7 +186,7 @@ const Coin = () => {
                     </p>
                   </div>
                   <div className={Style.coinMainDivInnerDiv12}>
-                    <button className={Style.addToFavoriteBtn}>Add to Favorite</button>
+                    <button className={Style.addToFavoriteBtn} onClick={(e)=>{addToFavorite(coinId,coinData.name)}}>Add to Favorite</button>
                   </div>
                 </div>
                 <div className={Style.coinChart}>
@@ -206,6 +249,7 @@ const Coin = () => {
               </div>
             </div>
           </div>
+          <ToastContainer/>
         </div>
       </>
     );
