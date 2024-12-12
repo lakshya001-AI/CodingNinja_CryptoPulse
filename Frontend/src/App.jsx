@@ -9,6 +9,7 @@ import ProtectedRoute from './Components/protectedRoute';
 import Currencies from './Components/currencies';
 import Coin from './Components/coin';
 import Favorite from './Components/favorite';
+import Converter from './Components/converter';
 
 function App() {
   return <>
@@ -19,7 +20,8 @@ function App() {
     <Route path='/mainPage' element={<ProtectedRoute><MainPage/></ProtectedRoute>}/>
     <Route path='/currencies' element={<ProtectedRoute><Currencies/></ProtectedRoute>}/>
     <Route path='/favorite' element={<ProtectedRoute><Favorite/></ProtectedRoute>}/>
-    <Route path='/coin/:coinId' element={<Coin/>}/>
+    <Route path='/coin/:coinId' element={<ProtectedRoute><Coin/></ProtectedRoute>}/>
+    <Route path='/converter' element={<ProtectedRoute><Converter/></ProtectedRoute>}/>
   </Routes>
   </BrowserRouter>
   </>

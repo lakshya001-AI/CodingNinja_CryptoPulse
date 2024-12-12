@@ -327,6 +327,7 @@ function Favorite() {
             <Link className={Style.linkElementNavBar} to="/favorite">
               Favorite
             </Link>
+            <Link className={Style.linkElementNavBar} to="/converter">Converter</Link>
           </div>
 
           <div className={Style.ProfileBtnNavBarMainPage}>
