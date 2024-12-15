@@ -122,7 +122,9 @@ app.post("/addToFavorite", async (req, res) => {
     );
 
     if (isCoinAlreadyFavorite) {
-      return res.status(400).send({ message: "CryptoCurrency is already in favorites" });
+      return res
+        .status(400)
+        .send({ message: "CryptoCurrency is already in favorites" });
     }
 
     // Add the coin to the favoriteCryptos array
@@ -131,7 +133,9 @@ app.post("/addToFavorite", async (req, res) => {
     // Save the updated user to the database
     await user.save();
 
-    res.status(200).send({ message: "CryptoCurrency added to favorites successfully" });
+    res
+      .status(200)
+      .send({ message: "CryptoCurrency added to favorites successfully" });
   } catch (error) {
     console.error("Error adding to favorites:", error);
     res.status(500).send({ message: "An error occurred" });
@@ -157,7 +161,6 @@ app.post("/getTheFavoriteCryptoCurrencies", async (req, res) => {
   }
 });
 
-
 // Remove the coin from the favorites
 
 app.post("/removeFavoriteCrypto", async (req, res) => {
@@ -181,7 +184,6 @@ app.post("/removeFavoriteCrypto", async (req, res) => {
     res.status(500).json({ message: "Server Error" });
   }
 });
-
 
 // Example of a Protected Route
 app.get("/protectedRoute", verifyToken, (req, res) => {
